@@ -1,0 +1,66 @@
+﻿@model Registration.Models.Userdemo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Userdemo</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.UserdemoId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Userid, "Userid", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Userid", String.Empty)
+                @Html.ValidationMessageFor(model => model.Userid)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sname)
+                @Html.ValidationMessageFor(model => model.sname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.semail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.semail)
+                @Html.ValidationMessageFor(model => model.semail)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Genderlist, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Genderlist)
+                @Html.ValidationMessageFor(model => model.Genderlist)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Registration.Models.Userdemo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genderlist)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.ename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genderlist)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserdemoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserdemoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserdemoId })
+        </td>
+    </tr>
+}
+
+</table>
