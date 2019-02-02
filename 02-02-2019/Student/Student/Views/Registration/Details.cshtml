@@ -1,0 +1,57 @@
+﻿@model Student.Models.Registration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.semail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.semail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.suname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.suname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RegistrationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
