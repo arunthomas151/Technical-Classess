@@ -1,0 +1,27 @@
+
+<html>
+  <form #f="ngForm" (submit)="registration(f)">
+    <table>
+      <tr>
+        <td><label>Name:</label></td>
+        <td><input type="text" id="name" name="name" [(ngModel)]="student.name"></td>
+      </tr>
+      <tr>
+        <td><label>Email:</label></td>
+        <td><input type="text" id="email" name="email" [(ngModel)]="student.email"></td>
+      </tr>
+      <tr>
+        <td><label>Contact</label></td>
+        <td><input type="text" id="phone" name="phone" [(ngModel)]="student.phone"></td>
+      </tr>
+      <tr>
+          <td><label>password:</label></td>
+          <td><input type="password" id="password" name="password" [(ngModel)]="student.password"></td>
+        </tr>
+        <tr>
+            <td><label></label></td>
+            <td><input type="submit" id="sub" name="sub"></td>
+          </tr>
+    </table>
+  </form>
+</html>
